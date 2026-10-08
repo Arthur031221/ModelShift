@@ -61,7 +61,7 @@ export async function runRegistry(argv: string[], io: IO): Promise<number> {
   const sub = positionals[0];
   if (flag(values, "help") || !sub) {
     io.stdout(REGISTRY_HELP);
-    return sub ? 0 : 2;
+    return flag(values, "help") ? 0 : 2;
   }
   const days = int(values, "days", 90);
   const today = resolveToday(values);

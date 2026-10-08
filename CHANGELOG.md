@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- `registry --help` now exits successfully after printing help.
+
 ## 0.1.0 (2026-09-30)
 
 First release.

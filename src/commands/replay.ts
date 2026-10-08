@@ -221,7 +221,11 @@ export function renderReplaySummary(report: ReplayReport, reportPath: string | n
   return `${lines.join("\n")}\n`;
 }
 
-export async function runReplayCommand(argv: string[], io: IO): Promise<number> {
+export async function runReplayCommand(
+  argv: string[],
+  io: IO,
+  dependencies: { sampleSessions: typeof sampleSessions } = { sampleSessions },
+): Promise<number> {
   const { values } = parse(argv, OPTIONS);
   if (flag(values, "help")) {
     io.stdout(REPLAY_HELP);
@@ -244,7 +248,7 @@ export async function runReplayCommand(argv: string[], io: IO): Promise<number> 
     const n = int(values, "n", 20, 1);
     const seedRaw = str(values, "seed");
     const seed = seedRaw === undefined ? undefined : int(values, "seed", 0);
-    const sample = await sampleSessions({ n, seed });
+    const sample = await dependencies.sampleSessions({ n, seed });
     const outFile = path.resolve(io.cwd, str(values, "out") ?? "modelshift-sessions.jsonl");
     if (sample.prompts.length === 0) {
       io.stderr(
