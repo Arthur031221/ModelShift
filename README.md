@@ -1,12 +1,12 @@
-# modelshift
+# ModelShift
 
 Your model changed. Find out what broke before your users do.
 
-![modelshift scan and fix on the bundled sample app](assets/demo.gif)
+![ModelShift scan and fix on the bundled sample app](assets/demo.gif)
 
 `modelshift` finds every model ID in your repo that retires soon, replays your real prompts on the replacement, and opens the migration PR. A scan of four popular, unrelated open-source repositories found 131 distinct model IDs that are retiring or already retired within 90 days, referenced 1,649 times across 296 files.[^1] The bundled registry separately lists 26 model IDs with a provider shutdown date inside the next 90 days, including the 11 OpenAI snapshots that stop working on 2026-10-23.[^2]
 
-[![CI](https://github.com/Arthur031221/modelshift/actions/workflows/ci.yml/badge.svg)](https://github.com/Arthur031221/modelshift/actions/workflows/ci.yml)
+[![CI](https://github.com/Arthur031221/ModelShift/actions/workflows/ci.yml/badge.svg)](https://github.com/Arthur031221/ModelShift/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/modelshift.svg)](https://www.npmjs.com/package/modelshift)
 
@@ -15,7 +15,7 @@ Your model changed. Find out what broke before your users do.
 
 Providers retire models on a schedule and most codebases find out when requests start returning 404. OpenAI shuts down `gpt-4-0613`, `gpt-4-turbo`, `gpt-4o-2024-05-13`, `o1`, `o3-mini`, `o4-mini` and five more on 2026-10-23, then the GPT-5 and o3 snapshots on 2026-12-11. Anthropic's Sonnet 4.5 became eligible for retirement on 2026-09-29, Haiku 4.5 follows on 2026-10-15 and Opus 4.5 on 2026-11-24. Claude Opus 4.7 and later reject `temperature`, `top_p` and `top_k` with a 400.
 
-Swapping the string is the easy part. The hard part is knowing whether the replacement still returns valid JSON, still calls your tools with the same arguments, refuses more often, or doubles your latency. modelshift answers both questions from the terminal.
+Swapping the string is the easy part. The hard part is knowing whether the replacement still returns valid JSON, still calls your tools with the same arguments, refuses more often, or doubles your latency. ModelShift answers both questions from the terminal.
 
 ## Install
 
@@ -28,7 +28,7 @@ npx github:Arthur031221/modelshift scan
 or install it on your `PATH`:
 
 ```
-git clone https://github.com/Arthur031221/modelshift
+git clone https://github.com/Arthur031221/ModelShift
 cd modelshift
 npm install -g .
 ```
@@ -115,14 +115,14 @@ On this machine `qwen3:1.7b` called the `get_weather` tool through Ollama's nati
 
 | Project | Scans code | Lifecycle registry | Replays prompts on the replacement | Rewrites code | CI check |
 |---|---|---|---|---|---|
-| modelshift | yes, 20 file types | OpenAI, Anthropic, Gemini, Bedrock, sourced and refreshed weekly | yes, JSON, tools, refusals, latency, cost, similarity | yes, with a diff and a PR | yes, action.yml |
+| ModelShift | yes, 20 file types | OpenAI, Anthropic, Gemini, Bedrock, sourced and refreshed weekly | yes, JSON, tools, refusals, latency, cost, similarity | yes, with a diff and a PR | yes, action.yml |
 | [openai/completions-responses-migration-pack](https://github.com/openai/completions-responses-migration-pack) | one migration (Completions to Responses) | no | no | partial, OpenAI only | no |
 | [LiteLLM](https://github.com/BerriAI/litellm) | no | model list with prices, no retirement dates | no, routes and falls back at runtime | no | no |
 | [promptfoo](https://github.com/promptfoo/promptfoo) | no | no | yes, general purpose evals with many graders | no | yes, for evals |
 | techdevsynergy/llm-model-deprecation, Ort0x36/deprecation-desk, modelrot, llm-deprecation-check | yes, scanner or lint only | small, hand maintained | no | no | some |
 | quora/model-deprecation-tracker | no | data only | no | no | no |
 
-promptfoo is the better tool when you want to build a graded eval suite. modelshift is the tool for the afternoon when a retirement email arrives and you need to know what is affected and whether the swap is safe.
+promptfoo is the better tool when you want to build a graded eval suite. ModelShift is the tool for the afternoon when a retirement email arrives and you need to know what is affected and whether the swap is safe.
 
 ## Command reference
 
@@ -150,7 +150,7 @@ Same as `scan` but prints only failing findings, emits GitHub Actions annotation
     days: 60
 ```
 
-The action is a composite that runs `npx --yes github:Arthur031221/modelshift#<version> check`, since modelshift is not on the npm registry yet. A copy of a full workflow is in `examples/workflows/modelshift-check.yml`.
+The action is a composite that runs `npx --yes github:Arthur031221/modelshift#<version> check`, since ModelShift is not on the npm registry yet. A copy of a full workflow is in `examples/workflows/modelshift-check.yml`.
 
 ### replay
 
@@ -200,9 +200,9 @@ Privacy of `--from-sessions`: the log files are opened read only. Only user turn
 
 ## Related projects
 
-- [llm-doctor](https://github.com/Arthur031221/llm-doctor): Diagnoses your local model setup the way modelshift diagnoses the model references in your code.
-- [shiftgear](https://github.com/Arthur031221/shiftgear): Decides which model and effort level an agent should use right now. modelshift tells you when a model ID in your code is about to stop working.
-- [inference-visually](https://github.com/Arthur031221/inference-visually): Explains what changes when you swap models, background reading for the migration modelshift finds you need to make.
+- [llm-doctor](https://github.com/Arthur031221/llm-doctor): Diagnoses your local model setup the way ModelShift diagnoses the model references in your code.
+- [shiftgear](https://github.com/Arthur031221/shiftgear): Decides which model and effort level an agent should use right now. ModelShift tells you when a model ID in your code is about to stop working.
+- [inference-visually](https://github.com/Arthur031221/inference-visually): Explains what changes when you swap models, background reading for the migration ModelShift finds you need to make.
 
 ## Contributing
 
