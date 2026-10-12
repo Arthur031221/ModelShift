@@ -107,7 +107,7 @@ On this machine `qwen3:1.7b` called the `get_weather` tool through Ollama's nati
 
 **The registry** was seeded on 2026-09-29 by reading the OpenAI deprecations page, the Anthropic model deprecations page, the Gemini API deprecations page and changelog, and the Bedrock legacy lifecycle page. Every entry carries the URL it came from. Dates that could not be read from a provider page are listed in `registry/UNVERIFIED.md` and left out. A weekly GitHub Action re-fetches the pages and opens a pull request when something changed.
 
-**replay** loads a JSONL prompt set, runs every prompt on the source model, then every prompt on the target model (all of one model first, so local servers do not reload weights between calls), and reports per prompt: JSON validity when `"expect":"json"` is set, output length delta, refusal (provider stop reason or a phrase classifier), tool call shape when `tools` are given (names, argument JSON validity, missing required keys), latency, cost from `registry/prices.json`, and similarity. Similarity is a lexical cosine over term frequencies by default, or an embedding cosine with `--embed-model`. A static `modelshift-report.html` shows every prompt with both outputs.
+**replay** loads a JSONL prompt set, runs every prompt on the source model, then every prompt on the target model (all of one model first, so local servers do not reload weights between calls), and reports per prompt: JSON validity when `"expect":"json"` is set, output length delta, refusal (provider stop reason or a phrase classifier), tool call shape when `tools` are given (names, argument JSON validity, missing required keys), latency, cost from `registry/prices.json`, and similarity. Similarity is a lexical cosine over term frequencies by default, or an embedding cosine with `--embed-model`. Optional user assertions check expected responses, refusals, tool names or counts, length and latency. A static `modelshift-report.html` shows every prompt with both outputs and assertion results.
 
 **fix** rewrites identifiers with status retired, retiring or deprecated to the provider's recommended replacement, following chains when the replacement itself retired (`chatgpt-4o-latest` to `gpt-5.1-chat-latest` to `gpt-5.6-sol`). Around any line that names a Claude model from Opus 4.7 onward it removes `temperature`, `top_p` and `top_k`, because Anthropic returns a 400 for non-default values on those models ([API parameter deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations#api-parameter-deprecations)). Prompt text such as "think step by step" in files that use Claude is flagged, not edited, with a pointer to Anthropic's [prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices), which recommends general instructions over prescriptive steps on thinking models. Everything is a dry run until `--write`.
 
@@ -158,7 +158,7 @@ The action is a composite that runs `npx --yes github:Arthur031221/modelshift#<v
 
 | Flag | Meaning |
 |---|---|
-| `--prompts <file>` | JSONL. Each line: `{"id","prompt"` or `"messages","system","tools","expect":"json","max_tokens","temperature"}` |
+| `--prompts <file>` | JSONL. Each line: `{"id","prompt"` or `"messages","system","tools","expect":"json","assertions","max_tokens","temperature"}` |
 | `--from-sessions` | Sample real user turns from `~/.claude/projects/**/*.jsonl` and `~/.codex/sessions/**/*.jsonl` |
 | `--n`, `--seed`, `--out`, `--sample-only`, `--yes` | Control the session sample (default 20 prompts, written to `modelshift-sessions.jsonl`) |
 | `--provider`, `--from-provider`, `--to-provider` | `openai`, `openrouter`, `ollama`, `lmstudio`, `vllm`, `llama-server`, `anthropic`, `gemini`. Guessed from the model ID when omitted |
@@ -168,10 +168,36 @@ The action is a composite that runs `npx --yes github:Arthur031221/modelshift#<v
 | `--max-tokens <n>` | Output budget per call, default 512 |
 | `--embed-model <id>`, `--embed-provider <name>` | Embedding similarity instead of lexical |
 | `--report <file>`, `--no-report` | HTML report path, default `modelshift-report.html` |
-| `--fail-on-regression` | Exit 1 when any prompt got worse on the target |
+| `--fail-on-regression` | Exit 1 on target assertion failures or comparison regressions |
 | `--limit <n>`, `--timeout <ms>`, `--quiet` | Run fewer prompts, change the request timeout, silence progress |
 
 Privacy of `--from-sessions`: the log files are opened read only. Only user turns are taken, tool results and slash commands are skipped, and a regex pass replaces API keys, tokens, private keys, connection strings and `password=` values with `[REDACTED]`. The sample is written to a local JSONL file and shown to you, and nothing is sent to any model until you answer the confirmation prompt or pass `--yes`. Use `--sample-only` to only produce the file. The redaction is a best effort filter, so read the file.
+
+#### Replay assertions
+
+Add a non-empty `assertions` array to a JSONL prompt to state which responses you accept. Each assertion has exactly `type` and `value`. Invalid types, values and extra fields are rejected before provider calls. Both models are checked, with per-assertion results in JSON and HTML and pass counts in the terminal.
+
+```jsonl
+{"id":"extract","prompt":"Return JSON with answer equal to 42.","expect":"json","assertions":[{"type":"json-equals","value":{"answer":42}},{"type":"max-chars","value":100},{"type":"max-latency-ms","value":2000}]}
+{"id":"decline","prompt":"Decline this request.","assertions":[{"type":"refusal","value":true}]}
+```
+
+| Type | Value | Requirement |
+|---|---|---|
+| `text-equals` | string | Returned text equals the value, including whitespace and case |
+| `text-contains` | non-empty string | Returned text contains the value, with case preserved |
+| `json-equals` | JSON value | Whole response parses as JSON and equals the value. Object key order is ignored, array order matters, and extra fields fail |
+| `refusal` | boolean | Provider stop reason or the existing phrase classifier detects the expected refusal state |
+| `tool-called` | non-empty string | A returned tool call has this name |
+| `tool-count` | non-negative integer | Exactly this many tool calls were returned, including zero |
+| `min-chars`, `max-chars` | non-negative integer | Response length is within the inclusive bound, measured in JavaScript UTF-16 code units |
+| `max-latency-ms` | finite non-negative number | Provider request latency is at most this many milliseconds |
+
+For a prompt with assertions, the target must pass each assertion. A failed target requirement counts as a regression even when the source also fails it or has a provider error. Provider errors fail assertions. `expect: "json"` also requires valid JSON on the target. `--fail-on-regression` exits 1 for these failures. Without that flag, the report still lists failures and the command exits 0.
+
+Assertions replace the automatic refusal, tool-shape and similarity regression labels for that prompt. The comparison metrics remain visible. Use response assertions such as `json-equals` to check the outcome you need, so a replacement can pass with a different tool name or different wording. Add `tool-called` or `tool-count` when the tool interaction itself is a requirement. Prompts without assertions keep the existing comparison behavior.
+
+Replay makes one provider chat request per prompt per model. It does not execute returned tools, continue an agent loop, or inspect files and other side effects. Assertions check the returned response and call metadata. They do not prove that an external action completed.
 
 ### fix [path]
 

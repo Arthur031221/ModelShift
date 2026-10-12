@@ -41,7 +41,10 @@ function outputBlock(label: string, s: SideResult): string {
   const meta = s.error
     ? ""
     : `<div class="meta">${s.latencyMs} ms, ${s.inputTokens ?? "?"} in / ${s.outputTokens ?? "?"} out tokens, ${money(s.costUsd)}, finish: ${esc(s.finishReason ?? "n/a")}</div>`;
-  return `<div class="side"><h4>${esc(label)}</h4>${meta}${calls}${body}</div>`;
+  const assertions = s.assertions.length
+    ? `<ul>${s.assertions.map((a) => `<li class="${a.passed ? "" : "bad"}">${esc(a.message)}</li>`).join("")}</ul>`
+    : "";
+  return `<div class="side"><h4>${esc(label)}</h4>${meta}${calls}${body}${assertions}</div>`;
 }
 
 function row(r: PromptResult, i: number): string {
@@ -74,6 +77,7 @@ function row(r: PromptResult, i: number): string {
           ? `<div class="meta">tools: ${esc(r.prompt.tools!.map((t) => t.name).join(", "))}</div>`
           : ""
       }</div>
+      ${r.prompt.assertions?.length ? `<h4>Assertions</h4><pre>${esc(JSON.stringify(r.prompt.assertions, null, 2))}</pre>` : ""}
       <div class="sides">${outputBlock(r.from.error ? "from (error)" : "from", r.from)}${outputBlock(r.to.error ? "to (error)" : "to", r.to)}</div>
     </details>
   </td>
@@ -99,6 +103,7 @@ export function renderHtmlReport(report: ReplayReport): string {
     <tr><td>Total cost</td><td>${money(a.totalCostUsd.from)}</td><td>${money(a.totalCostUsd.to)}</td></tr>
     <tr><td>Mean similarity</td><td colspan="2">${a.meanSimilarity === null ? "n/a" : a.meanSimilarity.toFixed(3)} (${esc(report.similarityMethod)})</td></tr>
     <tr><td>Prompts with regressions</td><td colspan="2" class="${a.regressions ? "bad" : ""}">${a.regressions}</td></tr>
+    ${a.assertionsExpected ? `<tr><td>Assertions passed (of ${a.assertionsExpected})</td><td>${a.assertionsPassed.from}</td><td>${a.assertionsPassed.to}</td></tr>` : ""}
   </tbody>
 </table>`;
   const rows = report.results.map(row).join("\n");

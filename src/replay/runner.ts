@@ -1,5 +1,6 @@
 import type { ChatResponse, Provider, ToolCall } from "../providers/types.js";
 import type { RegistryIndex } from "../registry/index.js";
+import { type AssertionResult, evaluateAssertions } from "./assertions.js";
 import {
   checkJson,
   cosine,
@@ -35,6 +36,7 @@ export interface SideResult {
   toolShape: ToolShape;
   finishReason: string | null;
   error: string | null;
+  assertions: AssertionResult[];
 }
 
 export interface PromptResult {
@@ -45,7 +47,7 @@ export interface PromptResult {
   lengthDeltaPct: number | null;
   similarity: number | null;
   toolShapeChanged: boolean;
-  /** Short labels describing what got worse on the target model. */
+  /** Target assertion failures, or comparison regressions when no assertions were supplied. */
   regressions: string[];
 }
 
@@ -64,6 +66,8 @@ export interface Aggregate {
   totalCostUsd: { from: number | null; to: number | null };
   meanSimilarity: number | null;
   regressions: number;
+  assertionsExpected: number;
+  assertionsPassed: { from: number; to: number };
 }
 
 export interface ReplayReport {
@@ -113,6 +117,7 @@ function emptySide(error: string): SideResult {
     toolShape: { called: [], unknownTools: [], argsParse: true, missingRequired: [] },
     finishReason: null,
     error,
+    assertions: [],
   };
 }
 
@@ -142,6 +147,7 @@ function toSideResult(
     toolShape: toolShape(response.toolCalls, prompt.tools),
     finishReason: response.finishReason,
     error: null,
+    assertions: [],
   };
 }
 
@@ -164,6 +170,7 @@ async function runSide(
         jsonMode: prompt.expect === "json",
       });
       const result = toSideResult(response, prompt, side, options.prices, options.index);
+      result.assertions = evaluateAssertions(prompt.assertions ?? [], result);
       out.push(result);
       options.onProgress?.({
         side: label,
@@ -174,7 +181,9 @@ async function runSide(
       });
     } catch (error) {
       const message = (error as Error).message;
-      out.push(emptySide(message));
+      const result = emptySide(message);
+      result.assertions = evaluateAssertions(prompt.assertions ?? [], result);
+      out.push(result);
       options.onProgress?.({
         side: label,
         index: i,
@@ -277,6 +286,11 @@ export function aggregate(results: PromptResult[]): Aggregate {
     totalCostUsd: { from: sumCost(from), to: sumCost(to) },
     meanSimilarity: sims.length ? Number(mean(sims).toFixed(3)) : null,
     regressions: results.filter((r) => r.regressions.length > 0).length,
+    assertionsExpected: results.reduce((total, r) => total + (r.prompt.assertions?.length ?? 0), 0),
+    assertionsPassed: {
+      from: from.reduce((total, r) => total + r.assertions.filter((a) => a.passed).length, 0),
+      to: to.reduce((total, r) => total + r.assertions.filter((a) => a.passed).length, 0),
+    },
   };
 }
 
@@ -295,8 +309,13 @@ export async function runReplay(options: RunOptions): Promise<ReplayReport> {
     const toolShapeChanged =
       bothOk && Boolean(prompt.tools?.length) && !sameToolShape(from.toolShape, to.toolShape);
     const regressions: string[] = [];
-    if (!from.error && to.error) regressions.push("error on target");
-    if (bothOk) {
+    if (prompt.assertions?.length) {
+      for (const [j, assertion] of to.assertions.entries()) {
+        if (!assertion.passed) regressions.push(`assertion ${j + 1} ${assertion.message}`);
+      }
+      if (!to.error && prompt.expect === "json" && !to.jsonValid) regressions.push("json broke");
+    } else if (!from.error && to.error) regressions.push("error on target");
+    else if (bothOk) {
       if (!from.refusal && to.refusal) regressions.push("new refusal");
       if (from.jsonValid === true && to.jsonValid === false) regressions.push("json broke");
       if (toolShapeChanged) regressions.push("tool shape changed");

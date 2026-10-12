@@ -3,6 +3,8 @@
 ## Unreleased
 
 - `registry --help` now exits successfully after printing help.
+- `replay` accepts validated JSONL assertions for response text and JSON values, refusal state, tool names and counts, output length and latency. Assertion results appear in terminal, JSON and HTML reports. Target failures trigger `--fail-on-regression` even when the source also fails.
+- Prompts with replay assertions use their expected response requirements for acceptance, allowing the same outcome through a different tool. Tool-shape and similarity comparisons remain visible, and prompts without assertions keep their existing regression checks.
 
 ## 0.1.0 (2026-09-30)
 

@@ -34,9 +34,10 @@ export const REPLAY_HELP = `Usage: modelshift replay --from <model> --to <model>
 Runs the same prompts on two models and reports JSON validity, output length,
 refusals, tool call shape, latency, cost and similarity per prompt and in aggregate.
 Writes a static HTML report.
+JSONL assertions check response requirements and determine target pass/fail when supplied.
 
 Prompt sources:
-  --prompts <file>        JSONL file. Each line: {"id","prompt"|"messages","system","tools","expect":"json","max_tokens"}
+  --prompts <file>        JSONL file. Each line: {"id","prompt"|"messages","system","tools","expect":"json","assertions","max_tokens"}
   --from-sessions         Sample real user turns from ~/.claude/projects and ~/.codex/sessions (read only)
   --n <count>             Number of session prompts to sample (default 20)
   --seed <int>            Make the sample reproducible
@@ -62,7 +63,7 @@ Output:
   --embed-provider <name> Preset for the embedding model (default: the target's provider)
   --report <file>         HTML report path (default modelshift-report.html)
   --no-report             Skip the HTML report
-  --fail-on-regression    Exit 1 when any prompt regressed on the target
+  --fail-on-regression    Exit 1 on target assertion failures or comparison regressions
   --quiet                 No progress output
   --json                  Print the full report as JSON
   -h, --help              Show this help
@@ -180,6 +181,7 @@ export function renderReplaySummary(report: ReplayReport, reportPath: string | n
       length: delta,
       latency,
       sim,
+      assertions: `${r.from.assertions.filter((a) => a.passed).length}/${r.from.assertions.length} > ${r.to.assertions.filter((a) => a.passed).length}/${r.to.assertions.length}`,
       result,
     };
   });
@@ -192,6 +194,7 @@ export function renderReplaySummary(report: ReplayReport, reportPath: string | n
       { key: "length", header: "LENGTH", align: "right" },
       { key: "latency", header: "LATENCY MS" },
       { key: "sim", header: "SIM", align: "right" },
+      ...(a.assertionsExpected ? [{ key: "assertions", header: "ASSERTIONS" }] : []),
       { key: "result", header: "RESULT" },
     ],
     rows,
@@ -217,6 +220,10 @@ export function renderReplaySummary(report: ReplayReport, reportPath: string | n
     `  similarity      ${a.meanSimilarity === null ? "n/a" : a.meanSimilarity.toFixed(3)} mean, ${report.similarityMethod}`,
     `  regressions     ${a.regressions ? red(`${a.regressions} of ${a.prompts} prompts`) : green("none")}`,
   ];
+  if (a.assertionsExpected)
+    lines.push(
+      `  assertions      ${a.assertionsPassed.from} > ${a.assertionsPassed.to} passed (of ${a.assertionsExpected})`,
+    );
   if (reportPath) lines.push("", `Report written to ${reportPath}`);
   return `${lines.join("\n")}\n`;
 }

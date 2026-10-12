@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import type { ChatMessage, ToolDef } from "../providers/types.js";
+import { parseAssertions, type ReplayAssertion } from "./assertions.js";
 
 export interface PromptCase {
   id: string;
@@ -7,6 +8,8 @@ export interface PromptCase {
   tools?: ToolDef[];
   /** "json" when the output must parse as JSON. */
   expect?: "json" | "text";
+  /** Explicit response requirements, used instead of comparison heuristics when supplied. */
+  assertions?: ReplayAssertion[];
   maxTokens?: number;
   temperature?: number;
   /** Where the prompt came from, for the report. */
@@ -65,6 +68,7 @@ export function normalizePrompt(record: unknown, lineNumber: number): PromptCase
   const out: PromptCase = { id, messages };
   if (tools) out.tools = tools;
   if (expect) out.expect = expect;
+  if (r.assertions !== undefined) out.assertions = parseAssertions(r.assertions, lineNumber);
   if (typeof r.max_tokens === "number") out.maxTokens = r.max_tokens;
   if (typeof r.temperature === "number") out.temperature = r.temperature;
   if (asString(r.source)) out.source = r.source;
