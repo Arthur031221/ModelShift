@@ -1,6 +1,6 @@
 {
-  "version": "2026-09-29",
-  "generated": "2026-09-29",
+  "version": "2026-10-12",
+  "generated": "2026-10-12",
   "sources": {
     "openai": "https://developers.openai.com/api/docs/deprecations",
     "openai_models": "https://developers.openai.com/api/docs/models",
@@ -17,7 +17,7 @@
       "announced": "2026-09-11",
       "deprecated": "2026-09-11",
       "retirement": "2026-10-01",
-      "replacement": "gpt-5.6-cyber",
+      "replacement": "The most capable cyber model available to you.",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -28,7 +28,7 @@
       "announced": "2026-08-26",
       "deprecated": "2026-08-26",
       "retirement": "2027-02-26",
-      "replacement": "gpt-live-transcribe",
+      "replacement": "gpt-live-transcribe or gpt-transcribe",
       "notes": "OpenAI also lists gpt-transcribe as a replacement.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -39,7 +39,7 @@
       "announced": "2026-08-26",
       "deprecated": "2026-08-26",
       "retirement": "2027-02-26",
-      "replacement": "gpt-live-transcribe",
+      "replacement": "gpt-live-transcribe or gpt-transcribe",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -50,7 +50,7 @@
       "announced": "2026-08-26",
       "deprecated": "2026-08-26",
       "retirement": "2027-02-26",
-      "replacement": "gpt-live-transcribe",
+      "replacement": "gpt-live-transcribe or gpt-transcribe",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -61,7 +61,7 @@
       "announced": "2026-08-26",
       "deprecated": "2026-08-26",
       "retirement": "2027-02-26",
-      "replacement": "gpt-live-transcribe",
+      "replacement": "gpt-live-transcribe or gpt-transcribe",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -167,7 +167,9 @@
     {
       "id": "gpt-5-2025-08-07",
       "provider": "openai",
-      "aliases": ["gpt-5"],
+      "aliases": [
+        "gpt-5"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
@@ -178,7 +180,9 @@
     {
       "id": "gpt-5-mini-2025-08-07",
       "provider": "openai",
-      "aliases": ["gpt-5-mini"],
+      "aliases": [
+        "gpt-5-mini"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
@@ -189,7 +193,9 @@
     {
       "id": "gpt-5-nano-2025-08-07",
       "provider": "openai",
-      "aliases": ["gpt-5-nano"],
+      "aliases": [
+        "gpt-5-nano"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
@@ -200,18 +206,22 @@
     {
       "id": "gpt-5-pro-2025-10-06",
       "provider": "openai",
-      "aliases": ["gpt-5-pro"],
+      "aliases": [
+        "gpt-5-pro"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
-      "replacement": "gpt-5.6-sol",
+      "replacement": "gpt-5.6-sol (reasoning.mode: pro)",
       "notes": "The alias gpt-5-pro resolves to this snapshot per the gpt-5-pro model page.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
     {
       "id": "o3-2025-04-16",
       "provider": "openai",
-      "aliases": ["o3"],
+      "aliases": [
+        "o3"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
@@ -222,11 +232,13 @@
     {
       "id": "o3-pro-2025-06-10",
       "provider": "openai",
-      "aliases": ["o3-pro"],
+      "aliases": [
+        "o3-pro"
+      ],
       "announced": "2026-06-11",
       "deprecated": "2026-06-11",
       "retirement": "2026-12-11",
-      "replacement": "gpt-5.6-sol",
+      "replacement": "gpt-5.6-sol (reasoning.mode: pro)",
       "notes": "The alias o3-pro resolves to this snapshot per the o3-pro model page.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -237,7 +249,7 @@
       "announced": "2026-06-02",
       "deprecated": "2026-06-02",
       "retirement": "2026-12-01",
-      "replacement": "gpt-image-2.5-sunburst",
+      "replacement": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
       "notes": "OpenAI also lists gpt-image-2.5-flare as a replacement.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -248,7 +260,7 @@
       "announced": "2026-06-02",
       "deprecated": "2026-06-02",
       "retirement": "2026-12-01",
-      "replacement": "gpt-image-2.5-sunburst",
+      "replacement": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
       "notes": "OpenAI also lists gpt-image-2.5-flare as a replacement.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -259,14 +271,16 @@
       "announced": "2026-06-02",
       "deprecated": "2026-06-02",
       "retirement": "2026-12-01",
-      "replacement": "gpt-image-2.5-sunburst",
+      "replacement": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
     {
       "id": "gpt-3.5-turbo-0125",
       "provider": "openai",
-      "aliases": ["gpt-3.5-turbo"],
+      "aliases": [
+        "gpt-3.5-turbo"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -277,7 +291,9 @@
     {
       "id": "gpt-4-0613",
       "provider": "openai",
-      "aliases": ["gpt-4"],
+      "aliases": [
+        "gpt-4"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -299,7 +315,9 @@
     {
       "id": "gpt-4-turbo",
       "provider": "openai",
-      "aliases": ["gpt-4-turbo-2024-04-09"],
+      "aliases": [
+        "gpt-4-turbo-2024-04-09"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -310,7 +328,9 @@
     {
       "id": "gpt-4.1-nano",
       "provider": "openai",
-      "aliases": ["gpt-4.1-nano-2025-04-14"],
+      "aliases": [
+        "gpt-4.1-nano-2025-04-14"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -336,14 +356,16 @@
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
-      "replacement": "gpt-image-2.5-sunburst",
+      "replacement": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
       "notes": "",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
     {
       "id": "o1-2024-12-17",
       "provider": "openai",
-      "aliases": ["o1"],
+      "aliases": [
+        "o1"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -354,7 +376,9 @@
     {
       "id": "o1-pro-2025-03-19",
       "provider": "openai",
-      "aliases": ["o1-pro"],
+      "aliases": [
+        "o1-pro"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -365,7 +389,9 @@
     {
       "id": "o3-mini-2025-01-31",
       "provider": "openai",
-      "aliases": ["o3-mini"],
+      "aliases": [
+        "o3-mini"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -376,7 +402,9 @@
     {
       "id": "o4-mini-2025-04-16",
       "provider": "openai",
-      "aliases": ["o4-mini"],
+      "aliases": [
+        "o4-mini"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-10-23",
@@ -457,7 +485,7 @@
       "announced": "2026-03-24",
       "deprecated": "2026-03-24",
       "retirement": "2026-09-24",
-      "replacement": null,
+      "replacement": "—",
       "notes": "Videos API shut down. No replacement listed.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -468,7 +496,7 @@
       "announced": "2026-03-24",
       "deprecated": "2026-03-24",
       "retirement": "2026-09-24",
-      "replacement": null,
+      "replacement": "—",
       "notes": "Videos API shut down. No replacement listed.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -479,7 +507,7 @@
       "announced": "2026-03-24",
       "deprecated": "2026-03-24",
       "retirement": "2026-09-24",
-      "replacement": null,
+      "replacement": "—",
       "notes": "Videos API shut down. No replacement listed.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -490,7 +518,7 @@
       "announced": "2026-03-24",
       "deprecated": "2026-03-24",
       "retirement": "2026-09-24",
-      "replacement": null,
+      "replacement": "—",
       "notes": "Videos API shut down. No replacement listed.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -501,7 +529,7 @@
       "announced": "2026-03-24",
       "deprecated": "2026-03-24",
       "retirement": "2026-09-24",
-      "replacement": null,
+      "replacement": "—",
       "notes": "Videos API shut down. No replacement listed.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -530,7 +558,9 @@
     {
       "id": "computer-use-preview-2025-03-11",
       "provider": "openai",
-      "aliases": ["computer-use-preview"],
+      "aliases": [
+        "computer-use-preview"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-07-23",
@@ -541,7 +571,9 @@
     {
       "id": "gpt-4o-mini-search-preview-2025-03-11",
       "provider": "openai",
-      "aliases": ["gpt-4o-mini-search-preview"],
+      "aliases": [
+        "gpt-4o-mini-search-preview"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-07-23",
@@ -552,7 +584,9 @@
     {
       "id": "gpt-4o-search-preview-2025-03-11",
       "provider": "openai",
-      "aliases": ["gpt-4o-search-preview"],
+      "aliases": [
+        "gpt-4o-search-preview"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-07-23",
@@ -651,7 +685,9 @@
     {
       "id": "o3-deep-research-2025-06-26",
       "provider": "openai",
-      "aliases": ["o3-deep-research"],
+      "aliases": [
+        "o3-deep-research"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-07-23",
@@ -662,7 +698,9 @@
     {
       "id": "o4-mini-deep-research-2025-06-26",
       "provider": "openai",
-      "aliases": ["o4-mini-deep-research"],
+      "aliases": [
+        "o4-mini-deep-research"
+      ],
       "announced": "2026-04-22",
       "deprecated": "2026-04-22",
       "retirement": "2026-07-23",
@@ -816,11 +854,14 @@
     {
       "id": "text-moderation-007",
       "provider": "openai",
-      "aliases": ["text-moderation-stable", "text-moderation-latest"],
+      "aliases": [
+        "text-moderation-stable",
+        "text-moderation-latest"
+      ],
       "announced": "2025-04-28",
       "deprecated": "2025-04-28",
       "retirement": "2025-10-27",
-      "replacement": "omni-moderation-latest",
+      "replacement": "omni-moderation",
       "notes": "The page names the omni-moderation family as the replacement.",
       "source": "https://developers.openai.com/api/docs/deprecations"
     },
@@ -849,7 +890,9 @@
     {
       "id": "gpt-4.5-preview",
       "provider": "openai",
-      "aliases": ["gpt-4.5-preview-2025-02-27"],
+      "aliases": [
+        "gpt-4.5-preview-2025-02-27"
+      ],
       "announced": "2025-04-14",
       "deprecated": "2025-04-14",
       "retirement": "2025-07-14",
@@ -871,7 +914,9 @@
     {
       "id": "gpt-3.5-turbo-16k-0613",
       "provider": "openai",
-      "aliases": ["gpt-3.5-turbo-16k"],
+      "aliases": [
+        "gpt-3.5-turbo-16k"
+      ],
       "announced": "2023-11-06",
       "deprecated": "2023-11-06",
       "retirement": "2024-09-13",
@@ -1026,17 +1071,19 @@
       "id": "gpt-5.1",
       "provider": "openai",
       "aliases": [],
-      "announced": null,
-      "deprecated": null,
-      "retirement": null,
-      "replacement": null,
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-04-01",
+      "replacement": "gpt-6-sol",
       "notes": "Listed on the pricing page.",
       "source": "https://developers.openai.com/api/docs/pricing"
     },
     {
       "id": "gpt-4.1",
       "provider": "openai",
-      "aliases": ["gpt-4.1-2025-04-14"],
+      "aliases": [
+        "gpt-4.1-2025-04-14"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1047,7 +1094,9 @@
     {
       "id": "gpt-4.1-mini",
       "provider": "openai",
-      "aliases": ["gpt-4.1-mini-2025-04-14"],
+      "aliases": [
+        "gpt-4.1-mini-2025-04-14"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1058,7 +1107,9 @@
     {
       "id": "gpt-4o-2024-08-06",
       "provider": "openai",
-      "aliases": ["gpt-4o"],
+      "aliases": [
+        "gpt-4o"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1080,7 +1131,9 @@
     {
       "id": "gpt-4o-mini",
       "provider": "openai",
-      "aliases": ["gpt-4o-mini-2024-07-18"],
+      "aliases": [
+        "gpt-4o-mini-2024-07-18"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1342,7 +1395,9 @@
     {
       "id": "claude-opus-4-5-20251101",
       "provider": "anthropic",
-      "aliases": ["claude-opus-4-5"],
+      "aliases": [
+        "claude-opus-4-5"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1354,7 +1409,9 @@
     {
       "id": "claude-opus-4-1-20250805",
       "provider": "anthropic",
-      "aliases": ["claude-opus-4-1"],
+      "aliases": [
+        "claude-opus-4-1"
+      ],
       "announced": "2026-06-05",
       "deprecated": "2026-06-05",
       "retirement": "2026-08-05",
@@ -1365,7 +1422,9 @@
     {
       "id": "claude-opus-4-20250514",
       "provider": "anthropic",
-      "aliases": ["claude-opus-4-0"],
+      "aliases": [
+        "claude-opus-4-0"
+      ],
       "announced": "2026-04-14",
       "deprecated": "2026-04-14",
       "retirement": "2026-06-15",
@@ -1412,41 +1471,49 @@
     {
       "id": "claude-sonnet-4-5-20250929",
       "provider": "anthropic",
-      "aliases": ["claude-sonnet-4-5"],
-      "announced": null,
-      "deprecated": null,
-      "retirement": null,
+      "aliases": [
+        "claude-sonnet-4-5"
+      ],
+      "announced": "2026-09-30",
+      "deprecated": "2026-09-30",
+      "retirement": "2026-11-30",
       "retirement_earliest": "2026-09-29",
-      "replacement": null,
+      "replacement": "claude-sonnet-5-5",
       "notes": "Active. Eligible for retirement from the earliest date. No deprecation announced as of the registry date. Anthropic gives at least 60 days notice before retirement.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
     {
       "id": "claude-sonnet-4-20250514",
       "provider": "anthropic",
-      "aliases": ["claude-sonnet-4-0"],
+      "aliases": [
+        "claude-sonnet-4-0"
+      ],
       "announced": "2026-04-14",
       "deprecated": "2026-04-14",
       "retirement": "2026-06-15",
-      "replacement": "claude-sonnet-4-6",
+      "replacement": "claude-sonnet-5-5",
       "notes": "Retired on the Claude API. Bedrock keeps its own schedule, see anthropic.claude-sonnet-4-20250514-v1:0.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
     {
       "id": "claude-3-7-sonnet-20250219",
       "provider": "anthropic",
-      "aliases": ["claude-3-7-sonnet-latest"],
+      "aliases": [
+        "claude-3-7-sonnet-latest"
+      ],
       "announced": "2025-10-28",
       "deprecated": "2025-10-28",
       "retirement": "2026-02-19",
-      "replacement": "claude-sonnet-4-6",
+      "replacement": "claude-sonnet-5-5",
       "notes": "Retired.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
     {
       "id": "claude-haiku-4-5-20251001",
       "provider": "anthropic",
-      "aliases": ["claude-haiku-4-5"],
+      "aliases": [
+        "claude-haiku-4-5"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -1458,7 +1525,9 @@
     {
       "id": "claude-3-5-haiku-20241022",
       "provider": "anthropic",
-      "aliases": ["claude-3-5-haiku-latest"],
+      "aliases": [
+        "claude-3-5-haiku-latest"
+      ],
       "announced": "2025-12-19",
       "deprecated": "2025-12-19",
       "retirement": "2026-02-19",
@@ -1484,25 +1553,29 @@
       "announced": "2025-08-13",
       "deprecated": "2025-08-13",
       "retirement": "2025-10-28",
-      "replacement": "claude-sonnet-4-6",
+      "replacement": "claude-sonnet-5-5",
       "notes": "Retired.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
     {
       "id": "claude-3-5-sonnet-20241022",
       "provider": "anthropic",
-      "aliases": ["claude-3-5-sonnet-latest"],
+      "aliases": [
+        "claude-3-5-sonnet-latest"
+      ],
       "announced": "2025-08-13",
       "deprecated": "2025-08-13",
       "retirement": "2025-10-28",
-      "replacement": "claude-sonnet-4-6",
+      "replacement": "claude-sonnet-5-5",
       "notes": "Retired.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
     {
       "id": "claude-3-opus-20240229",
       "provider": "anthropic",
-      "aliases": ["claude-3-opus-latest"],
+      "aliases": [
+        "claude-3-opus-latest"
+      ],
       "announced": "2025-06-30",
       "deprecated": "2025-06-30",
       "retirement": "2026-01-05",
@@ -1517,7 +1590,7 @@
       "announced": "2025-01-21",
       "deprecated": "2025-01-21",
       "retirement": "2025-07-21",
-      "replacement": "claude-sonnet-4-6",
+      "replacement": "claude-sonnet-5-5",
       "notes": "Retired.",
       "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
     },
@@ -1546,7 +1619,10 @@
     {
       "id": "claude-instant-1.2",
       "provider": "anthropic",
-      "aliases": ["claude-instant-1.0", "claude-instant-1.1"],
+      "aliases": [
+        "claude-instant-1.0",
+        "claude-instant-1.1"
+      ],
       "announced": "2024-09-04",
       "deprecated": "2024-09-04",
       "retirement": "2024-11-06",
@@ -1557,7 +1633,11 @@
     {
       "id": "claude-1.3",
       "provider": "anthropic",
-      "aliases": ["claude-1.0", "claude-1.1", "claude-1.2"],
+      "aliases": [
+        "claude-1.0",
+        "claude-1.1",
+        "claude-1.2"
+      ],
       "announced": "2024-09-04",
       "deprecated": "2024-09-04",
       "retirement": "2024-11-06",
@@ -1583,7 +1663,7 @@
       "announced": null,
       "deprecated": null,
       "retirement": "2026-06-25",
-      "replacement": "gemini-3.1-flash-image",
+      "replacement": "gemini-nano-banana-2.1",
       "notes": "",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1626,8 +1706,8 @@
       "aliases": [],
       "announced": null,
       "deprecated": null,
-      "retirement": "2026-10-02",
-      "replacement": "gemini-3.1-flash-image-preview",
+      "retirement": "2027-03-15",
+      "replacement": "gemini-3.1-flash-lite-image",
       "notes": "The listed replacement is itself retired, modelshift follows the chain to gemini-3.1-flash-image.",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1678,7 +1758,9 @@
     {
       "id": "gemini-2.0-flash-lite-preview",
       "provider": "google",
-      "aliases": ["gemini-2.0-flash-lite-preview-02-05"],
+      "aliases": [
+        "gemini-2.0-flash-lite-preview-02-05"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": "2025-12-09",
@@ -1726,7 +1808,7 @@
       "announced": null,
       "deprecated": null,
       "retirement": "2026-08-17",
-      "replacement": "gemini-3.1-flash-image",
+      "replacement": "gemini-nano-banana-2.1",
       "notes": "",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1737,7 +1819,7 @@
       "announced": null,
       "deprecated": null,
       "retirement": "2026-08-17",
-      "replacement": "gemini-3.1-flash-image",
+      "replacement": "gemini-nano-banana-2.1",
       "notes": "",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1748,7 +1830,7 @@
       "announced": null,
       "deprecated": null,
       "retirement": "2026-08-17",
-      "replacement": "gemini-3.1-flash-image",
+      "replacement": "gemini-nano-banana-2.1",
       "notes": "",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1799,7 +1881,11 @@
     {
       "id": "gemini-1.5-pro",
       "provider": "google",
-      "aliases": ["gemini-1.5-pro-latest", "gemini-1.5-pro-001", "gemini-1.5-pro-002"],
+      "aliases": [
+        "gemini-1.5-pro-latest",
+        "gemini-1.5-pro-001",
+        "gemini-1.5-pro-002"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": "2025-09-29",
@@ -1810,7 +1896,11 @@
     {
       "id": "gemini-1.5-flash",
       "provider": "google",
-      "aliases": ["gemini-1.5-flash-latest", "gemini-1.5-flash-001", "gemini-1.5-flash-002"],
+      "aliases": [
+        "gemini-1.5-flash-latest",
+        "gemini-1.5-flash-001",
+        "gemini-1.5-flash-002"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": "2025-09-29",
@@ -1821,7 +1911,10 @@
     {
       "id": "gemini-1.5-flash-8b",
       "provider": "google",
-      "aliases": ["gemini-1.5-flash-8b-latest", "gemini-1.5-flash-8b-001"],
+      "aliases": [
+        "gemini-1.5-flash-8b-latest",
+        "gemini-1.5-flash-8b-001"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": "2025-09-29",
@@ -1832,7 +1925,11 @@
     {
       "id": "gemini-1.0-pro",
       "provider": "google",
-      "aliases": ["gemini-pro", "gemini-1.0-pro-001", "gemini-1.0-pro-latest"],
+      "aliases": [
+        "gemini-pro",
+        "gemini-1.0-pro-001",
+        "gemini-1.0-pro-latest"
+      ],
       "announced": "2025-02-18",
       "deprecated": "2025-02-18",
       "retirement": null,
@@ -1854,7 +1951,10 @@
     {
       "id": "gemini-2.0-flash-thinking-exp",
       "provider": "google",
-      "aliases": ["gemini-2.0-flash-thinking-exp-01-21", "gemini-2.0-flash-thinking-exp-1219"],
+      "aliases": [
+        "gemini-2.0-flash-thinking-exp-01-21",
+        "gemini-2.0-flash-thinking-exp-1219"
+      ],
       "announced": "2025-11-04",
       "deprecated": "2025-11-04",
       "retirement": "2025-12-02",
@@ -1865,7 +1965,9 @@
     {
       "id": "gemini-2.0-pro-exp",
       "provider": "google",
-      "aliases": ["gemini-2.0-pro-exp-02-05"],
+      "aliases": [
+        "gemini-2.0-pro-exp-02-05"
+      ],
       "announced": "2025-11-04",
       "deprecated": "2025-11-04",
       "retirement": "2025-12-02",
@@ -1876,22 +1978,27 @@
     {
       "id": "gemini-2.5-pro-preview-06-05",
       "provider": "google",
-      "aliases": ["gemini-2.5-pro-preview-05-06", "gemini-2.5-pro-preview-03-25"],
+      "aliases": [
+        "gemini-2.5-pro-preview-05-06",
+        "gemini-2.5-pro-preview-03-25"
+      ],
       "announced": "2025-11-04",
       "deprecated": "2025-11-04",
       "retirement": "2025-12-02",
-      "replacement": null,
+      "replacement": "gemini-3.1-pro-preview",
       "notes": "Preview snapshots. The changelog names no replacement. The stable model is gemini-2.5-pro.",
       "source": "https://ai.google.dev/gemini-api/docs/changelog"
     },
     {
       "id": "gemini-2.5-flash-preview-05-20",
       "provider": "google",
-      "aliases": ["gemini-2.5-flash-preview-04-17"],
+      "aliases": [
+        "gemini-2.5-flash-preview-04-17"
+      ],
       "announced": "2025-11-04",
       "deprecated": "2025-11-04",
       "retirement": "2025-11-18",
-      "replacement": null,
+      "replacement": "gemini-3.6-flash",
       "notes": "Preview snapshot. The changelog names no replacement. The stable model is gemini-2.5-flash.",
       "source": "https://ai.google.dev/gemini-api/docs/changelog"
     },
@@ -1979,7 +2086,7 @@
       "announced": null,
       "deprecated": null,
       "retirement": null,
-      "replacement": null,
+      "replacement": "gemini-nano-banana-2.1",
       "notes": "Active. No shutdown announced.",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -1997,7 +2104,9 @@
     {
       "id": "gemini-3.8-live",
       "provider": "google",
-      "aliases": ["gemini-3.8-live-extended-thinking"],
+      "aliases": [
+        "gemini-3.8-live-extended-thinking"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -2008,7 +2117,9 @@
     {
       "id": "gemini-3.8-flash-tts",
       "provider": "google",
-      "aliases": ["gemini-3.8-flash-lite-tts"],
+      "aliases": [
+        "gemini-3.8-flash-lite-tts"
+      ],
       "announced": null,
       "deprecated": null,
       "retirement": null,
@@ -2066,8 +2177,8 @@
       "aliases": [],
       "announced": null,
       "deprecated": null,
-      "retirement": null,
-      "replacement": null,
+      "retirement": "2026-10-22",
+      "replacement": "gemini-omni-1.1-flash",
       "notes": "Named as a replacement on the deprecations page.",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -2077,8 +2188,8 @@
       "aliases": [],
       "announced": null,
       "deprecated": null,
-      "retirement": null,
-      "replacement": null,
+      "retirement": "2026-10-22",
+      "replacement": "gemini-omni-1.1-flash",
       "notes": "Named as a replacement on the deprecations page.",
       "source": "https://ai.google.dev/gemini-api/docs/deprecations"
     },
@@ -2246,6 +2357,920 @@
       "replacement": null,
       "notes": "Bedrock ID form documented by Anthropic. Bedrock sets its own lifecycle dates.",
       "source": "https://platform.claude.com/docs/en/models/overview"
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "provider": "anthropic",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "retirement_earliest": "2027-10-07"
+    },
+    {
+      "id": "gpt-5.3-codex",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-04-01",
+      "replacement": "gpt-6-sol",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-5.4-nano",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-04-01",
+      "replacement": "gpt-6-luna",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "tts-1",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-01-06",
+      "replacement": "gpt-realtime-2.1-mini",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "tts-1-hd",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-01-06",
+      "replacement": "gpt-realtime-2.1-mini",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4o-mini-tts-2025-03-20",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-01-06",
+      "replacement": "gpt-realtime-2.1-mini",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4o-mini-tts-2025-12-15",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-10-01",
+      "deprecated": "2026-10-01",
+      "retirement": "2027-01-06",
+      "replacement": "gpt-realtime-2.1-mini",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-3.5-turbo-completions",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-04-22",
+      "deprecated": "2026-04-22",
+      "retirement": "2026-10-23",
+      "replacement": "gpt-5.6-terra",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-0613-completions",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-04-22",
+      "deprecated": "2026-04-22",
+      "retirement": "2026-10-23",
+      "replacement": "gpt-5.6-sol",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-completions",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-04-22",
+      "deprecated": "2026-04-22",
+      "retirement": "2026-10-23",
+      "replacement": "gpt-5.6-sol",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-turbo-completions",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2026-04-22",
+      "deprecated": "2026-04-22",
+      "retirement": "2026-10-23",
+      "replacement": "gpt-5.6-sol",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-32k",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2024-06-06",
+      "deprecated": "2024-06-06",
+      "retirement": "2025-06-06",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-32k-0613",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2024-06-06",
+      "deprecated": "2024-06-06",
+      "retirement": "2025-06-06",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-32k-0314",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-06-13",
+      "deprecated": "2023-06-13",
+      "retirement": "2025-06-06",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-vision-preview",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2024-06-06",
+      "deprecated": "2024-06-06",
+      "retirement": "2024-12-06",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gpt-4-1106-vision-preview",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2024-06-06",
+      "deprecated": "2024-06-06",
+      "retirement": "2024-12-06",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-ada-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-3.5-turbo-instruct",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-babbage-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-3.5-turbo-instruct",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-curie-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-3.5-turbo-instruct",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-davinci-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-3.5-turbo-instruct",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "ada",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "babbage-002",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "babbage",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "babbage-002",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "curie",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "davinci-002",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "davinci",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "davinci-002",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-davinci-002",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-03-20",
+      "deprecated": "2023-03-20",
+      "retirement": "2023-03-23",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-davinci-edit-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-davinci-edit-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-similarity-ada-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-ada-doc-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-ada-query-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-search-ada-code-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-search-ada-text-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-similarity-babbage-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-babbage-doc-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-babbage-query-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-search-babbage-code-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-search-babbage-text-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-similarity-curie-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-curie-doc-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-curie-query-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-similarity-davinci-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-davinci-doc-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "text-search-davinci-query-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-07-06",
+      "deprecated": "2023-07-06",
+      "retirement": "2024-01-04",
+      "replacement": "text-embedding-3-small",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-davinci-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-03-20",
+      "deprecated": "2023-03-20",
+      "retirement": "2023-03-23",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-cushman-002",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-03-20",
+      "deprecated": "2023-03-20",
+      "retirement": "2023-03-23",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "code-cushman-001",
+      "provider": "openai",
+      "aliases": [],
+      "announced": "2023-03-20",
+      "deprecated": "2023-03-20",
+      "retirement": "2023-03-23",
+      "replacement": "gpt-4o",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.1-flash-tts-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-11-17",
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": "gemini-3.6-flash",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-computer-use-preview-10-2025",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-07-28",
+      "replacement": "gemini-3.8-flash",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-flash-lite-preview-09-2025",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-03-31",
+      "replacement": "gemini-3.1-flash-lite",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-flash-preview-09-25",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-02-17",
+      "replacement": "gemini-3.6-flash",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.5-transcribe-live",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.5-live-translate-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.1-flash-live-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-11-17",
+      "replacement": "gemini-3.8-live",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-11-17",
+      "replacement": "gemini-3.8-live",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-live-2.5-flash-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-12-09",
+      "replacement": "gemini-3.8-live",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.5-transcribe",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-flash-preview-tts",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-11-17",
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-pro-preview-tts",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-11-17",
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "embedding-2-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-08-10",
+      "replacement": "gemini-embedding-2",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "embedding-001",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-10-30",
+      "replacement": "gemini-embedding-2",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "embedding-gecko-001",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-10-30",
+      "replacement": "gemini-embedding-2",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-embedding-exp",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-10-30",
+      "replacement": "gemini-embedding-2",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-embedding-exp-03-07",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-10-30",
+      "replacement": "gemini-embedding-2",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-nano-banana-2.1",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-3.1-flash-lite-image",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.5-flash-image-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-01-15",
+      "replacement": "gemini-nano-banana-2.1",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-2.0-flash-preview-image-generation",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-11-14",
+      "replacement": "gemini-nano-banana-2.1",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "imagen-4.0-generate-preview-06-06",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-02-17",
+      "replacement": "imagen-4.0-generate-001",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "imagen-4.0-ultra-generate-preview-06-06",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-02-17",
+      "replacement": "imagen-4.0-ultra-generate-001",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "veo-3.1-lite-generate-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-10-22",
+      "replacement": "gemini-omni-1.1-flash",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "veo-3.0-generate-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-11-12",
+      "replacement": "veo-3.1-generate-preview",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "veo-3.0-fast-generate-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2025-11-12",
+      "replacement": "veo-3.1-fast-generate-preview",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-omni-1.1-flash",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-omni-flash-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-10-22",
+      "replacement": "gemini-omni-1.1-flash",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "lyria-3.5",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "lyria-3-clip-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "lyria-3-pro-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": "lyria-3.5",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "lyria-realtime-exp",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": null,
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-robotics-er-1.6-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-08-31",
+      "replacement": "gemini-robotics-er-2-preview",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "gemini-robotics-er-1.5-preview",
+      "provider": "google",
+      "aliases": [],
+      "announced": null,
+      "deprecated": null,
+      "retirement": "2026-04-30",
+      "replacement": "gemini-robotics-er-1.6-preview",
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+    },
+    {
+      "id": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+      "provider": "bedrock",
+      "aliases": [],
+      "announced": "2026-10-08",
+      "deprecated": "2026-10-08",
+      "retirement": "2027-04-08",
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html"
+    },
+    {
+      "id": "cohere.command-r-v1:0",
+      "provider": "bedrock",
+      "aliases": [],
+      "announced": "2026-02-19",
+      "deprecated": "2026-02-19",
+      "retirement": "2026-08-19",
+      "replacement": null,
+      "notes": "Added by registry refresh on 2026-10-12. Verify against the source page.",
+      "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html"
     }
   ]
 }
